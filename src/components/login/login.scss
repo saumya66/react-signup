@@ -12,6 +12,71 @@
 			font-weight: 600;
 		}
 	}
+
+	.floating-label-group {
+		position: relative;
+		height: 2.4rem;
+		width: 100%;
+		margin-bottom: 1rem;
+		input {
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+			height: 2.4rem;
+			width: 96%;
+			margin-left: 0.2rem;
+
+			height: 2.3rem;
+		}
+
+		input:focus {
+			outline: none !important;
+		}
+		.floating-label {
+			font-size: 13px;
+			color: rgba(0, 0, 0, 0.6);
+			position: absolute;
+			pointer-events: none;
+			top: 9px;
+			left: 12px;
+			transition: all 0.1s ease;
+			padding: 0.2rem;
+		}
+
+		input:focus ~ .floating-label,
+		input:not(:focus):valid ~ .floating-label {
+			height: 8px;
+
+			margin: 0;
+			padding: 0 5px;
+			background-color: white;
+			top: -7px;
+			bottom: 0px;
+			left: 4px;
+			font-size: 11px;
+			opacity: 1;
+			color: #404040;
+		}
+		button {
+			position: absolute;
+			background-color: transparent;
+			border: 0;
+			padding: 0.8rem;
+			top: 0;
+			right: 0;
+
+			.fa {
+				position: absolute;
+				font-size: 12px;
+				padding: 0.8rem;
+				top: 0;
+				right: 0;
+			}
+			.fa-angle-down {
+				font-size: 18px;
+			}
+		}
+	}
+
 	.pass-info {
 		font-size: 0.6rem;
 		color: rgba(0, 0, 0, 0.3);
