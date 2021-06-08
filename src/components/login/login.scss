@@ -17,7 +17,8 @@
 		position: relative;
 		height: 2.4rem;
 		width: 100%;
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
+		select,
 		input {
 			border: 1px solid rgba(0, 0, 0, 0.1);
 			border-radius: 5px;
@@ -27,7 +28,11 @@
 
 			height: 2.3rem;
 		}
+		select {
+			width: 97%;
+		}
 
+		select:focus,
 		input:focus {
 			outline: none !important;
 		}
@@ -42,7 +47,9 @@
 			padding: 0.2rem;
 		}
 
+		select:focus ~ .floating-label,
 		input:focus ~ .floating-label,
+		select:not(:focus):valid ~ .floating-label,
 		input:not(:focus):valid ~ .floating-label {
 			height: 8px;
 
@@ -73,6 +80,17 @@
 			}
 			.fa-angle-down {
 				font-size: 18px;
+			}
+		}
+		.email-error {
+			padding: 0.2rem 0.2rem;
+			// position: absolute;
+			// bottom: 2;
+			// left: 0;
+			.error {
+				font-size: 0.6rem;
+				color: red;
+				margin: 0;
 			}
 		}
 	}
