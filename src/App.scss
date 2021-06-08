@@ -7,7 +7,7 @@ body {
 	display: flex;
 
 	.left-col {
-		width: 60%;
+		width: 64%;
 		background-color: white;
 		display: flex;
 		align-items: center;
@@ -18,7 +18,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		background-color: #286efa;
-		width: 40%;
+		width: 36%;
 		.content {
 			width: 60%;
 
@@ -29,7 +29,8 @@ body {
 				margin-bottom: 3.8rem;
 			}
 			p {
-				font-size: 0.8rem;
+				line-height: 1.6rem;
+				font-size: 0.9rem;
 				color: white;
 			}
 		}

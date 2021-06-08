@@ -2,11 +2,11 @@
 	width: 44%;
 	h5 {
 		font-size: 1.6rem;
-		margin-bottom: 2rem;
+		margin-bottom: 2.6rem;
 	}
 	p {
 		font-size: 0.8rem;
-		margin-bottom: 2rem;
+		margin-bottom: 2.6rem;
 		.span {
 			color: #286efa;
 			font-weight: 600;
@@ -84,23 +84,22 @@
 		}
 		.email-error {
 			padding: 0.2rem 0.2rem;
-			// position: absolute;
-			// bottom: 2;
-			// left: 0;
+
 			.error {
 				font-size: 0.6rem;
 				color: red;
 				margin: 0;
 			}
 		}
+		.pass-info {
+			padding: 0.2rem 0.2rem;
+			font-size: 0.6rem;
+			color: rgba(0, 0, 0, 0.6);
+			margin-top: 0.4rem;
+			margin-bottom: 2rem;
+		}
 	}
 
-	.pass-info {
-		font-size: 0.6rem;
-		color: rgba(0, 0, 0, 0.3);
-		margin: 0;
-		margin-bottom: 2rem;
-	}
 	.btn {
 		border: 0;
 		border-radius: 5px;
@@ -108,6 +107,7 @@
 		width: 100%;
 		height: 2.6rem;
 		margin: 0;
+		margin-top: 1.6rem;
 		margin-bottom: 2rem;
 		p {
 			color: rgba(0, 0, 0, 0.4);

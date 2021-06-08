@@ -13,12 +13,17 @@ const initialSubmitObj = {
 	backColour: "#ededed",
 };
 
+const emailInputInfo = {
+	labelColor: "rgba(0, 0, 0, 0.6)",
+	borderColor: "rgba(0, 0, 0, 0.1)",
+	displayError: "none",
+};
+
 const Login = () => {
 	const [formInfo, setFormInfo] = useState(initialformObj);
 	const [passColorValid, setPassColorValid] = useState("rgba(0, 0, 0, 0.1)");
-	const [emailColorValid, setEmailColorValid] = useState("rgba(0, 0, 0, 0.1)");
 	const [submitBtn, setSubmitBtn] = useState(initialSubmitObj);
-	const [displayError, setDisplayError] = useState("none");
+	const [emailInputState, setEmailInputState] = useState(emailInputInfo);
 	const [showPass, setShowPass] = useState({
 		icon: "fa fa-eye",
 		type: "password",
@@ -53,11 +58,17 @@ const Login = () => {
 					event.target.value
 				)
 			) {
-				setEmailColorValid("rgba(0, 0, 0, 0.1)");
-				setDisplayError("none");
+				setEmailInputState({
+					labelColor: "rgba(0, 0, 0, 0.6)",
+					borderColor: "rgba(0, 0, 0, 0.1)",
+					displayError: "none",
+				});
 			} else {
-				setEmailColorValid("red");
-				setDisplayError("flex");
+				setEmailInputState({
+					labelColor: "red",
+					borderColor: "red",
+					displayError: "flex",
+				});
 			}
 		}
 		if (
@@ -103,11 +114,19 @@ const Login = () => {
 						onChange={handleChange}
 						focus
 						required
-						style={{ border: `1px solid ${emailColorValid}` }}
+						style={{ border: `1px solid ${emailInputState.borderColor}` }}
 					></input>
-					<label className="floating-label">Your email</label>
+					<label
+						className="floating-label"
+						style={{ color: emailInputState.labelColor }}
+					>
+						Your email
+					</label>
 
-					<div className="email-error" style={{ display: displayError }}>
+					<div
+						className="email-error"
+						style={{ display: emailInputState.displayError }}
+					>
 						<p className="error">Please enter a valid email address</p>
 					</div>
 				</div>
@@ -143,9 +162,9 @@ const Login = () => {
 					<button onClick={passwordType}>
 						<i className={showPass.icon} aria-hidden="true"></i>
 					</button>
+					<p className="pass-info">Minimum 8 characters</p>
 				</div>
 			</form>
-			<p className="pass-info">Minimum 8 characters</p>
 			<button
 				className="btn"
 				type="submit"
